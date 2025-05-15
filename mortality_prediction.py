@@ -128,3 +128,13 @@ print()
 
 print("Mortality distribution:")
 print(df.groupby(['subject_id', 'mortality']).size().groupby('mortality').size(), '\n')
+
+# mortality_prediction
+# Create "data" folder if it doesn't exist
+os.makedirs("data", exist_ok=True)
+
+# Save the cleaned DataFrame as CSV inside the "data" folder
+df.to_csv("data/df_cleaned.csv", index=False)
+
+
+print(df.head())
